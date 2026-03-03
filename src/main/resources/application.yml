@@ -1,0 +1,34 @@
+spring:
+  application:
+    name: bilibili-games
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/bilibili_games?useSSL=false&useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+  data:
+    redis:
+      host: localhost
+      port: 6379
+      # password: your-password
+      database: 0
+
+server:
+  port: 8080
+
+logging:
+  level:
+    root: info
+    org.springframework.web: info
+    org.hibernate.SQL: debug
+
